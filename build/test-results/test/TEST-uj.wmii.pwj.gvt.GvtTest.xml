@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="uj.wmii.pwj.gvt.GvtTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-22T08:59:25" hostname="Lenas-MacBook-Air.local" time="0.358">
+  <properties/>
+  <testcase name="addFileToRepo()" classname="uj.wmii.pwj.gvt.GvtTest" time="0.358"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
