@@ -1,8 +1,8 @@
 ## Great Versioning Tool (gvt)
 
-Należy napisać system kontroli wersji plików - (bardzo) uproszczony GIT.
+System kontroli wersji plików - (bardzo) uproszczony GIT.
 
-System obsługuje tylko pliki. Nie obsługuje podkatalogów, i nie musi (ale może) obsługiwać linków.
+System obsługuje tylko pliki. Nie obsługuje podkatalogów ani linków.
 
 Podstawową jednostką działania są *wersje*. Każda *wersja* zawiera:
 - numer wersji (od `0` do `Integer.MAX_VALUE`);
@@ -11,10 +11,10 @@ Podstawową jednostką działania są *wersje*. Każda *wersja* zawiera:
 - *ostatnia wersja* to wersja, która została utworzona ostatnio. Tworzyć nową wersję mogą komendy: `init` (tylko 0), `add`, `detach`, `commit`. UWAGA: Te komendy pracują zawsze na ostatniej wersji, nie na tej, która jest aktualnie pobrana. 
 
 ### Uruchomienie aplikacji
-- System powinien dostarczyć uruchamialną klasę `Gvt`. Klasa ta będzie używana do uruchomienia wszystkich komend.
-- Komenda zawsze będzie pierwszym parametrem uruchomienia programu.
-- W razie braku parametrów, program powinien wypisać na *System.out*: `Please specify command.`, oraz zwrócić kod błędu 1.
-- W razie podania nieznanej komendy, program powinien wypisać na *System.out*: `Unknown command {specifed-command}.`, oraz zwrócić kod błędu 1.
+- System dostarcza uruchamialną klasę `Gvt`. Klasa ta będzie używana do uruchomienia wszystkich komend.
+- Komenda zawsze jest pierwszym parametrem uruchomienia programu.
+- W razie braku parametrów, program wypisuje na *System.out*: `Please specify command.`, oraz zwraca kod błędu 1.
+- W razie podania nieznanej komendy, program wypisuje na *System.out*: `Unknown command {specifed-command}.`, oraz zwraca kod błędu 1.
 
 ### Zasady ogólne
 - Wszystkie komendy (poza `init`) działają tylko w zainicjalizowanym katalogu. Jeżli bieżący katalog nie jest zainicjalizowany, wszystkie pozostałe komendy powinny wypisać na *System.out* komunikat: `Current directory is not initialized. Please use "init" command to initialize.`, oraz zwrócić kod błędu -2. Ten błąd ma pierwszeństwo przed wszystkimi innymi (np brak pliku, który chcemy dodać).
