@@ -4,7 +4,7 @@ cd my_repo
 
 echo "def" > b.txt
 
-java -jar ../build/libs/04-gvt-1.0.jar add b.txt > message.out
+java -jar ../build/libs/great-versioning-tool-1.0.jar add b.txt > message.out
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code: " $0
@@ -19,7 +19,7 @@ if [[ $? -ne 0 ]]; then
 fi
 rm -r -f message.out
 
-if [[ $(java -jar ../build/libs/04-gvt-1.0.jar history -last 1) = "2: Added file: b.txt" ]]; then
+if [[ $(java -jar ../build/libs/great-versioning-tool-1.0.jar history -last 1) = "2: Added file: b.txt" ]]; then
   echo "pass version -last 1"
 else
   cd -

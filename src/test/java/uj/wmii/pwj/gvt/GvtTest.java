@@ -1,7 +1,6 @@
 package uj.wmii.pwj.gvt;
 
 import org.junit.jupiter.api.*;
-import org.mockito.Mock;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -18,7 +17,6 @@ public class GvtTest {
 
     private ByteArrayOutputStream out;
 
-    @Mock
     private ExitHandler eh = mock(ExitHandler.class);
 
     @BeforeEach
@@ -34,7 +32,7 @@ public class GvtTest {
 
     private void executeRuntime(String command, String failMessage) {
         try {
-            Runtime.getRuntime().exec(command);
+            new ProcessBuilder(command.split("\\s+")).start();
             Thread.sleep(100);
         } catch (IOException | InterruptedException e) {
             fail(failMessage, e);
@@ -406,5 +404,4 @@ public class GvtTest {
             fail("Cannot read file b.txt", e);
         }
     }
-
 }

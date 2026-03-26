@@ -73,6 +73,7 @@ public class Gvt {
                     else {
                         detach(Path.of(args[1]), getMessage(args));
                     }
+                    break;
                 case "checkout":
                     if (args.length < 2) {
                         exit(ExitCode.CHECKOUT_INVALID);

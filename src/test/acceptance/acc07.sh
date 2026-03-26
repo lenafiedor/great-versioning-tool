@@ -4,14 +4,14 @@ cd my_repo
 
 echo "xyz" > b.txt
 
-java -jar ../build/libs/04-gvt-1.0.jar commit
+java -jar ../build/libs/great-versioning-tool-1.0.jar commit
 if [[ $? -ne 50 ]]; then
     cd -
     echo "fail - invalid exit code for empty commit "
     exit 1
 fi
 
-java -jar ../build/libs/04-gvt-1.0.jar commit b.txt -m "Some b-change" > message.out
+java -jar ../build/libs/great-versioning-tool-1.0.jar commit b.txt -m "Some b-change" > message.out
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code for commit "
@@ -26,7 +26,7 @@ if [[ $? -ne 0 ]]; then
 fi
 rm -r -f message.out
 
-if [[ $(java -jar ../build/libs/04-gvt-1.0.jar history -last 1) = "3: Committed file: b.txt" ]]; then
+if [[ $(java -jar ../build/libs/great-versioning-tool-1.0.jar history -last 1) = "3: Committed file: b.txt" ]]; then
   echo "pass version -last 1"
 else
   cd -
@@ -34,7 +34,7 @@ else
   exit 4
 fi
 
-java -jar ../build/libs/04-gvt-1.0.jar version > message.out
+java -jar ../build/libs/great-versioning-tool-1.0.jar version > message.out
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code: " $0

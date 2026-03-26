@@ -2,7 +2,7 @@
 echo -n "[04-GVT][$0] starting... "
 cd my_repo
 
-java -jar ../build/libs/04-gvt-1.0.jar checkout 2
+java -jar ../build/libs/great-versioning-tool-1.0.jar checkout 2
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code: " $0
@@ -16,7 +16,7 @@ if [[ $? -ne 0 ]]; then
     exit 2
 fi
 
-java -jar ../build/libs/04-gvt-1.0.jar checkout 10
+java -jar ../build/libs/great-versioning-tool-1.0.jar checkout 10
 
 if [[ $? -ne 40 ]]; then
     cd -
@@ -24,7 +24,7 @@ if [[ $? -ne 40 ]]; then
     exit 3
 fi
 
-java -jar ../build/libs/04-gvt-1.0.jar checkout 3
+java -jar ../build/libs/great-versioning-tool-1.0.jar checkout 3
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code: " $0

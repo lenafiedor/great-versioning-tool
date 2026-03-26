@@ -2,7 +2,7 @@
 echo -n "[04-GVT][$0] starting... "
 cd my_repo
 
-java -jar ../build/libs/04-gvt-1.0.jar history > message.out
+java -jar ../build/libs/great-versioning-tool-1.0.jar history > message.out
 if [[ $? -ne 0 ]]; then
     cd -
     echo "fail - invalid exit code after history: " $0

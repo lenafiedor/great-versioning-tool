@@ -78,7 +78,7 @@ public class AltGvtTest {
         String name, boolean hasRuntimeCommand, String runtimeCommand, int expectedExitCode, String expectedExitMessage, String commands, boolean hasComment, String comment) {
         if (hasRuntimeCommand) {
             try {
-                Runtime.getRuntime().exec(runtimeCommand);
+                new ProcessBuilder(runtimeCommand.split("\\s+")).start();
             } catch (IOException e) {
                 fail("Error with runtime command: " + runtimeCommand, e);
             }

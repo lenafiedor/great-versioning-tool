@@ -4,7 +4,7 @@ mkdir my_repo
 cd my_repo
 pwd
 
-if [[ $(java -jar ../build/libs/04-gvt-1.0.jar) = "Please specify command." ]]; then
+if [[ $(java -jar ../build/libs/great-versioning-tool-1.0.jar) = "Please specify command." ]]; then
     echo "pass"
 else
     cd -

@@ -25,7 +25,7 @@ These commands have an optional parameter `-m {"User message in quotes"}`, which
 ### Commands
 
 - `init`: Initializes the GVT system in the current directory and sets both the active and latest version to `0`.
-- `add`: Adds the file specified as a parameter to the latest version. It accepts an optional user message.
+- `add`: Adds the filesas a parameter to the latest version. It accepts an optional user message.
 - `detach`: Detaches the file specified as a parameter from the latest version. It accepts an optional user message.
 - `checkout`: Restores files to the state from a specific version provided as a parameter. This command does not change the tracking state of files in GVT.
 - `commit`: Creates a new version in GVT using the file specified as a parameter. It accepts an optional user message.
